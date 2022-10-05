@@ -6,7 +6,7 @@ use voku\helper\HtmlDomParser;
 
 class PensadorModel
 {
-    public function getLastImage()
+    public static function getLastImage()
     {
         $urlRecent = 'https://www.pensador.com/recentes/';
         try {

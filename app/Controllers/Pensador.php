@@ -13,15 +13,14 @@ class Pensador extends BaseController
 
     public function imagem_recente()
     {
-        $pensadorModel = new PensadorModel;
-        $urlImg = $pensadorModel->getLastImage();
+        $urlImg = PensadorModel::getLastImage();
 
         if ($urlImg ===  false){
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
             exit();
         }
 
-        header('location:' . $pensadorModel->getLastImage());
+        header('location:' . $urlImg);
         exit();
     }
 }
